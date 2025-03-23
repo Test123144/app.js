@@ -1,4 +1,3 @@
-يقة
 const interval = (60 / count) * 1000; // الفاصل الزمني بين كل تعليق
 
 app.get('/', (req, res) => {
