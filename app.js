@@ -1,6 +1,6 @@
 import express from "express";
 import request from "request";
-import qs from "qss";
+import qs from "qs";
 
 const app = express();
 const port = 3000;
