@@ -14,7 +14,7 @@ const sendMessageBool=true;
 const sendPostBool=false;
 // عدد المرات في الدقيقه الواحده👇
 // اكثر شيء 60 اذا زدت عليها السيرفر بعلق
-const count = 300;
+const count = 30;
 const email= `123456789xdf4@gmail.com`;
 const password=`a12345`;
 app.get('/', (req, res) => {
@@ -29,7 +29,7 @@ function sendPost() {
       btoa(unescape(encodeURIComponent(JSON.stringify(postData)))), android: true};
      
     request({
-        url:"https://app.sanime.net/function/h10.php?page=sendPost",
+        url:"https://app.sanime.net/function/h10.php?page=addcmd",
         method: "POST",
         body: qs.stringify(body),
     headers: {"Content-Type": "application/x-www-form-urlencoded",
