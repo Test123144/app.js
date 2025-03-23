@@ -28,13 +28,33 @@ function sendComment() {
         body: qs.stringify(body),
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
-            'User-Agent': 'IBRAHIMSEVEN',
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_8_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
+            'Referer': 'https://ios.sanime.net/',
+            'Origin': 'https://ios.sanime.net',
+            'Accept-Language': 'ar',
+            'Accept-Encoding': 'gzip, deflate, br',
         },
     }, function (error, response, body) {
-        if (response && response.statusCode == 200) {
-            console.log("Comment sent successfully");
-        } else {
+        if (error) {
             console.log("Error sending comment:", error);
+            return;
+        }
+
+        if (response && response.statusCode === 200) {
+            console.log("Comment sent successfully. Response:", body);
+            // تحقق من محتوى الاستجابة لمعرفة إذا كان التعليق تم قبوله
+            try {
+                const jsonResponse = JSON.parse(body);
+                if (jsonResponse.success) {
+                    console.log("Comment was accepted by the server.");
+                } else {
+                    console.log("Comment was not accepted. Server response:", jsonResponse);
+                }
+            } catch (e) {
+                console.log("Failed to parse server response:", e);
+            }
+        } else {
+            console.log("Failed to send comment. Status code:", response.statusCode);
         }
     });
 }
