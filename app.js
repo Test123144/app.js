@@ -1,5 +1,5 @@
 import express from "express";
-import request from "request";
+import request from "reque";
 //import cron from 'node-cron';
 
 import qs from "qs";
