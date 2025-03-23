@@ -5,9 +5,9 @@ import qs from "qs";
 const app = express();
 const port = 3000;
 
-// معلومات الحساب (مضمنة مباشرة في الكود)
-const email = "123456789xdf4@gmail.com"; // استبدل بالإيميل الخاص بك
-const password = "a12345"; // استبدل بالباسورد الخاص بك
+// معلومات الحساب
+const email = "123456789xdf4@gmail.com";
+const password = "a12345";
 
 // الرسالة الثابتة للتعليق
 const commentText = "Test";
@@ -21,9 +21,6 @@ const commentUrl = "https://app.sanime.net/function/h10.php?page=addcmd";
 
 // رابط API لتسجيل الدخول (إذا كان مطلوبًا)
 const loginUrl = "https://app.sanime.net/function/h10.php?page=login";
-
-// معرف الانمي (One Piece)
-const animeId = "532"; // استبدل بمعرف الانمي الصحيح
 
 // حساب الفاصل الزمني بين كل تعليق (بالثواني)
 const minutes = 1 / count;
@@ -58,7 +55,6 @@ function login(callback) {
 // دالة إرسال التعليق
 function sendComment() {
     const commentData = {
-        anime_id: animeId,
         comment: commentText,
         user_id: "12345", // إضافة معرف المستخدم (إذا كان مطلوبًا)
         session_token: "abc123" // إضافة رمز الجلسة (إذا كان مطلوبًا)
