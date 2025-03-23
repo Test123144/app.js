@@ -83,7 +83,7 @@ setInterval(function() {
    console.log('Rstarting.........');
     try {
         request({
-        url: "https://gehrman.onrender.com/",
+        url: "https://app-js-ij5u.onrender.com/",
         method: "GET",
        
         }, function (error, response, body){
