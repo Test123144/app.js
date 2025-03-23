@@ -1,13 +1,4 @@
-import express from "express";
-import request from "request";
-import qs from "qs";
-
-const app = express();
-const port = 3000;
-const message = "Test"; // الرسالة التي تريد إرسالها
-const email = "123456789xdf4@gmail.com"; // البريد الإلكتروني
-const password = "a12345"; // كلمة المرور
-const count = 30; // عدد التعليقات في الدقيقة
+يقة
 const interval = (60 / count) * 1000; // الفاصل الزمني بين كل تعليق
 
 app.get('/', (req, res) => {
@@ -68,5 +59,4 @@ setInterval(function() {
 }, interval);
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+    con
