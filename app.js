@@ -48,7 +48,7 @@ function sendMessage() {
       email:email, password: password,m: 
        btoa(unescape(encodeURIComponent(message))) } ;
     request({
-        url:"https://app.sanime.net/secure/chat/send.php",
+        url:"https://app.sanime.net/function/h10.php?page=addcmd",
         method: "POST",
         
         body: qs.stringify(body),
