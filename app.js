@@ -5,16 +5,16 @@ import qs from "qs";
 const app = express();
 const port = 3000;
 
+// معلومات الحساب (مضمنة مباشرة في الكود)
+const email = "123456789xdf4@gmail.com"; // استبدل بالإيميل الخاص بك
+const password = "a12345"; // استبدل بالباسورد الخاص بك
+
 // الرسالة الثابتة للتعليق
 const commentText = "Test";
 
 // إعدادات الإرسال
 const sendCommentBool = true; // إذا كنت تريد إرسال التعليقات، قم بتعيينها إلى true
 const count = 30; // عدد التعليقات في الدقيقة (لا تزيد عن 60)
-
-// معلومات الحساب
-const email = "123456789xdf4@gmail.com";
-const password = "a12345";
 
 // رابط API لإرسال التعليق
 const commentUrl = "https://app.sanime.net/function/h10.php?page=addcmd";
@@ -93,24 +93,6 @@ login(function (loggedIn) {
         }, theInterval);
     }
 });
-
-// إعادة تشغيل السيرفر كل 10 دقائق (للتأكد من استمرارية التشغيل على Render)
-const restartInterval = 10 * 60 * 1000; // 10 دقائق
-setInterval(function () {
-    console.log("إعادة تشغيل السيرفر...");
-    try {
-        request({
-            url: "https://YOUR_RENDER_APP_URL/", // استبدل برابط تطبيقك على Render
-            method: "GET"
-        }, function (error, response, body) {
-            if (response.statusCode === 200) {
-                console.log("تمت إعادة التشغيل بنجاح!");
-            }
-        });
-    } catch (error) {
-        console.log(`حدث خطأ: ${error}`);
-    }
-}, restartInterval);
 
 // بدء السيرفر
 app.listen(port, () => {
